@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class PlayerStatsManager_Test : StatsManager, IKnockbackAble
+public class PlayerStatsManager_Test : StatsManager
 {
     public override float MaxHealth => 100;
     public override float Speed => 9;
@@ -14,12 +14,7 @@ public class PlayerStatsManager_Test : StatsManager, IKnockbackAble
 
     private void OnTriggerEnter(Collider other)
     {
-        Knockback(other.transform);
         if (other.GetComponent<StatsManager>() != null)
             TakeDamage(other.GetComponent<StatsManager>().Attack);
-    }
-    public void Knockback(Transform knockbackExecuterSource)
-    {
-        
     }
 }

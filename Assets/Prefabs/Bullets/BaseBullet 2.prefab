@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
-  lifeTime: 5
+  lifeTime: 3
   speed: 12
   isOwnedByPlayer: 0
 --- !u!135 &1381299483619858268

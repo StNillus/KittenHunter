@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
         playerControls.PlayerMovement.Enable();
     }
 
-    private void OnMovement(InputValue _inputValue) //CHANGE TO CALL ON BUTTON DOWN/PRESS ONLY??? (maybe)
+    private void OnMovement(InputValue _inputValue)
     {
         Debug.Log("moving");
         Vector3 movementDirection = new Vector3(_inputValue.Get<Vector2>().x, 0, _inputValue.Get<Vector2>().y);

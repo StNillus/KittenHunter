@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TestEnemyStats
   m_EditorClassIdentifier: 
   maxHealth: 10
-  speed: 0.03
+  speed: 10
   attack: 5
   attackRange: 2

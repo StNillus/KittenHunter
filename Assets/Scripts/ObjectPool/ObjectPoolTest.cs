@@ -18,11 +18,6 @@ public class ObjectPoolTest : MonoBehaviour
         instance = this;
     }
 
-    //private void Start()
-    //{
-    //    InitializeNewPool(startPrefab);
-    //}
-
     public GameObject GetObject(GameObject prefab, Transform target)
     {
         if (!poolDictionary.ContainsKey(prefab))
@@ -38,19 +33,14 @@ public class ObjectPoolTest : MonoBehaviour
             
         }
 
-        objToGet.transform.position = target.position;
-        //_objToGet.transform.rotation = target.rotation;
-        
+        objToGet.transform.position = target.position;   
         objToGet.SetActive(true);
-
-        //Debug.Log(_objToGet.GetComponent<EnemyStatsManager>().MaxHealth);
 
         return objToGet;
     }
 
     public void ReturnObject(GameObject objectToReturn)
     {
-        //Debug.Log("return object");
         GameObject _originalPrefab = pooledObjectOrigins[objectToReturn];
         objectToReturn.SetActive(false);
         objectToReturn.transform.parent = transform;
@@ -60,10 +50,6 @@ public class ObjectPoolTest : MonoBehaviour
     {
         StartCoroutine(ReturnToPool(objectToReturn, delay));
         Debug.Log("return object with delay");
-        //GameObject _originalPrefab = pooledObjectOrigins[objectToReturn];
-        //objectToReturn.SetActive(false);
-        //objectToReturn.transform.parent = transform;
-        //poolDictionary[_originalPrefab].Enqueue(objectToReturn);
     }
 
 
